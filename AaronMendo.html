@@ -1,18 +1,26 @@
 <!DOCTYPE HTML>
 <html>  
 <body>
-<form action="form.php" method="post">
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["nombre"].value;
+  if (x == "") {
+    alert("El nombre es obligatorio");
+    return false;
+}
+}
+</script>
+<form name="myForm" action="form.php" onsubmit="return validateForm()" method="post">
 Nombre: <input type="text" name="nombre"><br>
 Telefono: <input type="text" name="telefono"><br>
 Correo: <input type="text" name="correo"><br>
-<label for="username">Username:</label><br>
-<input type="text" id="username" name="username"><br>
-<label for="pwd">Password:</label><br>
+<label for="pwd">Contraseña:</label><br>
+<input type="password" id="pwd" name="pwd"><br>
+<label for="pwd">Confirma Contraseña:</label><br>
 <input type="password" id="pwd" name="pwd"><br>
 RFC: <input type="text" name="RFC"><br>
 Notas: <input type="text" name="RFC"><br>
-<input type="submit" value="Submit">
+<input type="submit">
 </form>
-
 </body>
 </html>
